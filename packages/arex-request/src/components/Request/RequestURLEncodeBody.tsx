@@ -1,6 +1,7 @@
 import { CopyOutlined, DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 import { copyToClipboard, SpaceBetweenWrapper, TooltipButton } from '@arextest/arex-core';
 import { App, Typography } from 'antd';
+import pagination from 'antd/es/pagination';
 import PM from 'postman-collection';
 import React, { FC, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -8,8 +9,6 @@ import { useTranslation } from 'react-i18next';
 import { useArexRequestStore } from '../../hooks';
 import { ArexRESTParam } from '../../types';
 import HeadersTable from '../HeadersTable';
-import pagination from 'antd/es/pagination';
-
 
 const RequestURLEncodeBody: FC = () => {
   const { t } = useTranslation();
@@ -43,7 +42,7 @@ const RequestURLEncodeBody: FC = () => {
             key: decodeURIComponent(key),
             value: decodeURIComponent(value),
             active: true,
-            id: String(Math.random())
+            id: String(Math.random()),
           });
         });
         if (parsedParams.length > 0) {
