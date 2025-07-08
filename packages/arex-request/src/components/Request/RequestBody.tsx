@@ -130,7 +130,7 @@ const RequestBody = () => {
       ) : store.request.body.contentType.startsWith('application/octet-stream') ? (
         <RequestBinaryBody />
       ) : store.request.body.contentType.startsWith('application/x-www-form-urlencoded') ? (
-        <RequestURLEncodeBody ref={rawBodyRef} />
+        <RequestURLEncodeBody />
       ) : null}
     </div>
   );
